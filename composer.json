@@ -20,7 +20,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Omnipay\\eupago\\" : "src/" }
+        "psr-4": { "Omnipay\\Eupago\\" : "src/" }
     },
     "require": {
          "omnipay/common": "~2.0"
