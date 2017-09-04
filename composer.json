@@ -1,5 +1,5 @@
 {
-    "name": "sergiodlopes/omnipay-eupago-multibanco",
+    "name": "eupago/omnipay-eupago-multibanco",
     "type": "library",
     "description": "Eupago - pagamento por multibanco",
     "keywords": [
@@ -11,7 +11,7 @@
         "payment",
 		"multibanco"
     ],
-    "homepage": "https://github.com/sergiodlopes/omnipay-eupago-multibanco",
+    "homepage": "https://github.com/eupago/omnipay-eupago-multibanco",
     "license": "MIT",
     "authors": [
         {
@@ -30,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "master": "2.0.x-dev"
+            "dev-master": "2.0.x-dev"
         }
     }
 }
