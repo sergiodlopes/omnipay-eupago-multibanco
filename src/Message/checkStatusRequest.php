@@ -46,10 +46,24 @@ class checkStatusRequest extends AbstractRequest {
 
         $url = $this->getUrl();
 
+        // SOAP 1.2 client
+        $params = array(
+            'encoding' => 'UTF-8',
+            'cache_wsdl' => WSDL_CACHE_NONE,
+            'soap_version' => SOAP_1_2,
+            'keep_alive' => false,
+            'connection_timeout' => 180,
+			'stream_context' => stream_context_create(array(
+				'ssl' => array(
+					'verify_peer' => false,
+					'verify_peer_name' => false, 
+					'allow_self_signed' => true
+				)
+			))
+		);
+
         try {
-            $client = new SoapClient($url, array(
-                'cache_wsdl' => WSDL_CACHE_NONE
-            ));
+            $client = new SoapClient($url, $params);
             $result = $client->informacaoReferencia($arraydados);
         } catch (SoapFault $sf) {
             throw new Exception($sf->getMessage(), $sf->getCode());
