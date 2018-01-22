@@ -54,6 +54,7 @@ class Request extends AbstractRequest {
         } else {
             $url = 'http://eupago.pt/eupagov1.wsdl';
         }
+
         return $url;
     }
 

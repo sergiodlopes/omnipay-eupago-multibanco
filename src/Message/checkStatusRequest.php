@@ -29,12 +29,14 @@ class checkStatusRequest extends AbstractRequest {
     }
 
     public function getUrl() {
-        $explode = explode ('-' , $this->getApiKey());
-        if ($explode[0] = "demo") {
+        $parts = explode('-', $this->getApiKey());
+
+        if ($parts[0] === 'demo') {
             $url = 'http://replica.eupago.pt/replica.eupagov1.wsdl';
         } else {
             $url = 'http://eupago.pt/eupagov1.wsdl';
         }
+
         return $url;
     }
 
